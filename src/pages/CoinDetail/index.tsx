@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import HistoryChart from '../../components/HistoryChart';
-import CoinData from '../../components/CoinData';
 import coinGecko from '../../services/coinGecko';
 
 interface IPropsCoin {
@@ -85,7 +84,6 @@ const CoinDetail: React.FC = () => {
     return (
       <div>
         <HistoryChart data={coinData} />
-        <CoinData />
       </div>
     );
   };
