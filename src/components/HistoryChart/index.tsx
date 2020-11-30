@@ -10,9 +10,11 @@ interface IPropsData {
 const HistoryChart: React.FC<IPropsData> = ({ data, ...rest }) => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const { day, week, year, detail } = data;
-  const [timeFormat, setTimeFormat] = useState("24h");
+  const [timeFormat, setTimeFormat] = useState("1y");
 
   const determineTimeFormat = () => {
+    console.log(data);
+    console.log(timeFormat);
     switch (timeFormat) {
       case "24h":
         return day;
@@ -21,7 +23,7 @@ const HistoryChart: React.FC<IPropsData> = ({ data, ...rest }) => {
       case "1y":
         return year;
       default:
-        return day
+        return year
     }
   }
 
@@ -36,7 +38,6 @@ const HistoryChart: React.FC<IPropsData> = ({ data, ...rest }) => {
             backgroundColor: "#66CDAA",
             borderColor: "#66CDAA",
             pointRadius: 0,
-            // borderWidth: 1
           },
           ],
         },
@@ -57,10 +58,10 @@ const HistoryChart: React.FC<IPropsData> = ({ data, ...rest }) => {
         }
       });
     }
-  }, [timeFormat])
+  }, [timeFormat, year])
 
   const renderPrice = () => {
-    if (detail) {
+    if (detail && day.length > 100) {
       return (
         <>
           <Container>

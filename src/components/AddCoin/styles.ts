@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Select from 'react-select';
 
 export const Container = styled.div`
   width: 200px;
@@ -7,4 +6,12 @@ export const Container = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
+
+  input {
+    border: 0;
+
+    &::placeholder {
+      padding-left: 10px;
+    }
+  }
 `;

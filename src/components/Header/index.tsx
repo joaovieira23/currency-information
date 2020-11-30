@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     <Link to="/">
       <Container>
         <Image src={logoImg} alt="BitCoin" />
-        <h1>BitCoin</h1>
+        <h1>Coins</h1>
       </Container>
     </Link>
   );

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import Select from 'react-select';
-import { withTheme } from 'styled-components';
 import { WatchListContext } from '../../Context/watchList';
 
 import { Container } from './styles';
@@ -76,6 +75,7 @@ const AddCoin: React.FC = () => {
 
   return (
     <Container>
+      <p>Selecione uma moeda</p>
       <Select
         value={selectedValue}
         onChange={handleClick}
